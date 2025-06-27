@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  const toggleMode = () => {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+  };
+  window.onload = () => {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  };
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dipak Waghmare | Cloud Engineer</title>
@@ -35,9 +47,17 @@
   </style>
 </head>
 <body>
+  
+  <header>
+  <img src="DipakW-logo.png" alt="Logo" style="height: 60px;">
+  <h1>Dipak Waghmare</h1>
+  <p>AWS Cloud | DevOps | Automation Specialist</p>
+</header>
+
   <header>
     <h1>Dipak Waghmare</h1>
     <p>AWS Cloud | DevOps | Automation Specialist</p>
+        <button onclick="toggleMode()" style="margin-top: 1rem;">🌓 Toggle Mode</button>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -47,9 +67,24 @@
 
   <section id="about">
     <h2>About Me</h2>
+    <div class="skill-bar">
+  <p>AWS</p>
+  <div class="bar"><div class="progress" style="width: 85%;"></div></div>
+</div>
     <p>I’m a Cloud Infrastructure Engineer with 3.6+ years of experience building scalable AWS-based solutions. I automate everything—from CI/CD pipelines to multi-account provisioning—using Terraform, Ansible, Jenkins, and Docker. I thrive at the intersection of cloud performance and operational efficiency.</p>
   </section>
 
+<script>
+  window.addEventListener("scroll", () => {
+    document.querySelectorAll(".fade-in").forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight) {
+        el.classList.add("visible");
+      }
+    });
+  });
+</script>
+
+  
   <section id="projects">
     <h2>Projects</h2>
 
