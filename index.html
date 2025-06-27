@@ -1,128 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  const toggleMode = () => {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
-  };
-  window.onload = () => {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
-    }
-  };
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dipak Waghmare | Cloud Engineer</title>
-  <style>
-    body {
-      margin: 0; font-family: 'Segoe UI', sans-serif;
-      background: #f4f7f9; color: #333;
-    }
-    header, footer {
-      background: #1f2937; color: white; text-align: center; padding: 1.5rem;
-    }
-    nav a {
-      margin: 0 1rem; color: #e5e7eb; text-decoration: none;
-    }
-    section {
-      max-width: 900px; margin: 2rem auto; padding: 0 1rem;
-    }
-    h1, h2 {
-      color: #111827;
-    }
-    .project {
-      background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-    }
-    .contact {
-      text-align: center; margin-top: 2rem;
-    }
-    a.button {
-      display: inline-block; padding: 0.5rem 1rem;
-      background: #2563eb; color: white; text-decoration: none; border-radius: 4px;
-      margin: 0.25rem;
-    }
-  </style>
+  <title>Dipak Waghmare | Cloud & DevOps Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    const toggleMode = () => {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    };
+    window.onload = () => {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add("visible");
+        }
+      });
+    });
+  </script>
 </head>
 <body>
-  
   <header>
-  <img src="DipakW-logo.png" alt="Logo" style="height: 60px;">
-  <h1>Dipak Waghmare</h1>
-  <p>AWS Cloud | DevOps | Automation Specialist</p>
-</header>
-
-  <header>
+    <img src="DipakW-logo.png" alt="Dipak Logo" />
     <h1>Dipak Waghmare</h1>
     <p>AWS Cloud | DevOps | Automation Specialist</p>
-        <button onclick="toggleMode()" style="margin-top: 1rem;">🌓 Toggle Mode</button>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+    <button onclick="toggleMode()" style="margin-top: 1rem;">🌓 Toggle Mode</button>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="skill-bar">
-  <p>AWS</p>
-  <div class="bar"><div class="progress" style="width: 85%;"></div></div>
-</div>
-    <p>I’m a Cloud Infrastructure Engineer with 3.6+ years of experience building scalable AWS-based solutions. I automate everything—from CI/CD pipelines to multi-account provisioning—using Terraform, Ansible, Jenkins, and Docker. I thrive at the intersection of cloud performance and operational efficiency.</p>
+  <section id="home" class="fade-in">
+    <h1>Building the Cloud, One Script at a Time</h1>
+    <p>I design scalable, secure, and automated infrastructures using AWS, Terraform, and CI/CD pipelines.</p>
   </section>
 
-<script>
-  window.addEventListener("scroll", () => {
-    document.querySelectorAll(".fade-in").forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight) {
-        el.classList.add("visible");
-      }
-    });
-  });
-</script>
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>I’m a Cloud Infrastructure Engineer with 3.6+ years of hands-on experience automating complex deployments using tools like Jenkins, Docker, Ansible, and Terraform. I'm passionate about solving scalability challenges and continuously optimizing cloud environments for cost and performance.</p>
+  </section>
 
-  
-  <section id="projects">
+  <section id="projects" class="fade-in">
     <h2>Projects</h2>
 
     <div class="project">
-      <h3>AWS-based Infrastructure Support</h3>
-      <ul>
-        <li>Monitored production environments using EC2, S3, RDS, IAM, ECS, CloudWatch, and Load Balancers.</li>
-        <li>Delivered cloud support for AWS and Fujitsu K5 with a focus on uptime and availability.</li>
-        <li>Supported and monitored 3+ enterprise-level applications, improving uptime and incident handling.</li>
-        <li>Provided end-user and remote desktop support across global teams (Japan region).</li>
-        <li>Supported and monitored 3+ enterprise-level applications, improving uptime and incident handling.</li>
-      </ul>
+      <h3>Multi-Account AWS Infrastructure Automation</h3>
+      <p>Provisioned and managed AWS resources using Terraform and GitLab CI/CD, supporting cross-account infrastructure strategies with IAM, S3, and VPC modules.</p>
+      <a href="#">View Repo</a>
     </div>
 
     <div class="project">
-      <h3>Infrastructure Automation with Terraform</h3>
-      <ul>
-        <li>Provisioned AWS resources via Terraform in GitLab CI/CD pipelines.</li>
-        <li>Reduced project costs by 55% through system tuning and efficient usage.</li>
-        <li>Automated infrastructure tasks using Terraform and Ansible for consistent deployment.</li>
-        <li>Automated AWS provisioning using Terraform and GitLab pipelines, supporting secure multi account setups.</li>
-        <li>Reduced project costs by 55% through system optimization and efficient resource usage.</li> 
-      </ul>
+      <h3>Monitoring + Auto-Heal System with CloudWatch</h3>
+      <p>Designed proactive alerting and self-healing scripts for EC2 and ECS, improving uptime and reducing MTTR by 60% across production workloads.</p>
+      <a href="#">View Repo</a>
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="skills" class="fade-in">
+    <h2>Skill Set</h2>
+
+    <div class="skill-bar">
+      <p>AWS</p>
+      <div class="bar"><div class="progress" style="width: 90%;"></div></div>
+    </div>
+
+    <div class="skill-bar">
+      <p>Terraform</p>
+      <div class="bar"><div class="progress" style="width: 85%;"></div></div>
+    </div>
+
+    <div class="skill-bar">
+      <p>CI/CD (Jenkins, GitHub Actions)</p>
+      <div class="bar"><div class="progress" style="width: 80%;"></div></div>
+    </div>
+
+    <div class="skill-bar">
+      <p>Docker & Ansible</p>
+      <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:deepakkw3@gmail.com">deepakkw3@gmail.com</a></p>
     <p>
-      <a class="button" href="https://linkedin.com/in/dipak-waghmare" target="_blank">LinkedIn</a>
-      <a class="button" href="mailto:deepakkw3@gmail.com">Email Me</a>
+      <a href="https://linkedin.com/in/dipak-waghmare" target="_blank">LinkedIn</a> |
+      <a href="mailto:deepakkw3@gmail.com">Send Email</a>
     </p>
   </section>
 
   <footer>
-    <p>© 2025 Dipak Waghmare. All rights reserved.</p>
+    <p>© 2025 Dipak Waghmare. Designed with ❤️ and automated precision.</p>
   </footer>
 </body>
 </html>
-      
